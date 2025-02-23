@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="itic.bcn.Entitats.Equip" table="Equip">
+        <id name="id" column="id_equip">
+            <generator class="identity"/>
+        </id>
+        <property name="nom" column="nom_equip" not-null="true" unique="true"/>
+        <property name="ciutat" column="ciutat" not-null="true"/>
+        <many-to-one name="lliga" column="id_lliga" not-null="true" class="itic.bcn.Entitats.Lliga"/>
+        <set name="jugadors" inverse="true" cascade="all">
+            <key column="Equip_Id"/>
+            <one-to-many class="itic.bcn.Entitats.Jugador"/>
+        </set>
+    </class>
+</hibernate-mapping>
