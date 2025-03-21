@@ -1,0 +1,13 @@
+/home/pau/M06UF04/dao_patro/src/main/java/itic/bcn/DAO/ClassificacioDAO.java
+/home/pau/M06UF04/dao_patro/src/main/java/itic/bcn/DAO/EquipDAO.java
+/home/pau/M06UF04/dao_patro/src/main/java/itic/bcn/DAO/GenDAO.java
+/home/pau/M06UF04/dao_patro/src/main/java/itic/bcn/DAO/GenDAOImpl.java
+/home/pau/M06UF04/dao_patro/src/main/java/itic/bcn/DAO/JugadorDAO.java
+/home/pau/M06UF04/dao_patro/src/main/java/itic/bcn/DAO/LligaDAO.java
+/home/pau/M06UF04/dao_patro/src/main/java/itic/bcn/Entitats/Classificacio.java
+/home/pau/M06UF04/dao_patro/src/main/java/itic/bcn/Entitats/Equip.java
+/home/pau/M06UF04/dao_patro/src/main/java/itic/bcn/Entitats/Jugador.java
+/home/pau/M06UF04/dao_patro/src/main/java/itic/bcn/Entitats/Lliga.java
+/home/pau/M06UF04/dao_patro/src/main/java/itic/bcn/Main.java
+/home/pau/M06UF04/dao_patro/src/main/java/itic/bcn/Utils/Entrada.java
+/home/pau/M06UF04/dao_patro/src/main/java/itic/bcn/Utils/HibernateUtil.java
