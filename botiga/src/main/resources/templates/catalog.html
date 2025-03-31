@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ca" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Catàleg de Llibres</title>
+    <link th:href="@{/styles/style_catalog.css}" rel="stylesheet">
+</head>
+<body>
+    <h1>Catàleg de Llibres</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Títol</th>
+                <th>Autor</th>
+                <th>ISBN</th>
+                <th>Data Publicació</th>
+                <th>Preu</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="llibre : ${llibres}">
+                <td th:text="${llibre.titol}"></td>
+                <td th:text="${llibre.autor}"></td>
+                <td th:text="${llibre.isbn}"></td>
+                <td th:text="${llibre.dataPublicacio != null} ? 
+                    ${#temporals.format(llibre.dataPublicacio, 'dd/MM/yyyy')} : '--'"></td>
+                <td th:text="${#numbers.formatDecimal(llibre.preu, 1, 2)} + ' €'"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ca" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cercar per ID</title>
+    <link th:href="@{/styles/style_search.css}" rel="stylesheet">
+</head>
+<body>
+    <h1>Cercar Llibre per ID</h1>
+    
+    <!-- Formulario de búsqueda -->
+    <form th:action="@{/cercaid}" method="get">
+        <input type="number" name="id" placeholder="Introdueix l'ID" required>
+        <button type="submit">Cercar</button>
+    </form>
+
+    <!-- Resultados -->
+    <div th:if="${llibre != null}">
+        <table>
+            <tr>
+                <th>Títol</th>
+                <th>Autor</th>
+                <th>ISBN</th>
+                <th>Data Publicació</th>
+                <th>Preu</th>
+            </tr>
+            <tr>
+                <td th:text="${llibre.titol}"></td>
+                <td th:text="${llibre.autor}"></td>
+                <td th:text="${llibre.isbn}"></td>
+                <td th:text="${#temporals.format(llibre.dataPublicacio, 'dd/MM/yyyy')}"></td>
+                <td th:text="${#numbers.formatDecimal(llibre.preu, 1, 2)} €"></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Mensajes de error -->
+    <div th:if="${error}" class="error-message">
+        [[${error}]]
+    </div>
+    <div th:if="${llibre == null && error == null}">
+        <p class="no-results">No s'ha trobat cap llibre</p>
+    </div>
+
+    <a th:href="@{/catalog}">Tornar al catàleg</a>
+</body>
+</html>
